@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shapes xmlns="http://www.evolus.vn/Namespace/Pencil"
+        xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+
+        id="boostrap_stencils"
+        displayName="Bootstrap Stencils"
+        description="A collection of shapes based on bootstrap
+                     elements"
+        author="Tom Willemse"
+        url="https://ryuslash.org">
+  <Shape id="navbar" displayName="Navbar" icon="Icons/navbar.png">
+    <Properties>
+      <PropertyGroup>
+        <Property name="box" type="Dimension">200,50</Property>
+      </PropertyGroup>
+      <PropertyGroup name="General">
+        <Property name="rounded" displayName="Round corners"
+                  type="Bool">true</Property>
+        <Property name="inverted" displayName="Inverted colors"
+                  type="Bool">false</Property>
+      </PropertyGroup>
+    </Properties>
+
+    <Behaviors>
+      <For ref="navRect">
+        <Box>$box</Box>
+        <Fill>Color.fromString($inverted.value ? "#080808ff" : "#f8f8f8ff")</Fill>
+        <StrokeColor>Color.fromString($inverted.value ? "#222222ff" : "#e7e7e7ff")</StrokeColor>
+        <StrokeStyle>1|</StrokeStyle>
+        <Radius>
+          <Arg>$rounded.value ? 4 : 0</Arg>
+          <Arg>$rounded.value ? 4 : 0</Arg>
+        </Radius>
+      </For>
+    </Behaviors>
+
+    <p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+               xmlns="http://www.w3.org/2000/svg">
+      <rect id="navRect" x="0" y="0" />
+    </p:Content>
+  </Shape>
+</Shapes>
