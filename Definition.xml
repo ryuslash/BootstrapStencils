@@ -77,4 +77,58 @@
     </p:Content>
   </Shape>
 
+  <Shape id="button" displayName="Button" icon="Icons/button.png">
+    <Properties>
+      <PropertyGroup>
+        <Property name="box" type="Dimension">67,44</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Color">
+        <Property name="backgroundColor"
+                  displayName="Background Color"
+                  type="Color">#ffffffff</Property>
+        <Property name="borderColor"
+                  displayName="Border Color"
+                  type="Color">#ccccccff</Property>
+        <Property name="textColor"
+                  displayName="Text Color"
+                  type="Color">#333333ff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Text">
+        <Property name="label" displayName="Label"
+                  type="PlainText">Button</Property>
+        <Property name="font" displayName="Font"
+                  type="Font">Helvetica Neue,Helvetica,Arial,sans-serif|normal|normal|14px</Property>
+      </PropertyGroup>
+    </Properties>
+
+    <Behaviors>
+      <For ref="buttonRect">
+        <Box>$box</Box>
+        <Fill>$backgroundColor</Fill>
+        <StrokeColor>$borderColor</StrokeColor>
+        <StrokeStyle>1|</StrokeStyle>
+        <Radius>
+          <Arg>4</Arg>
+          <Arg>4</Arg>
+        </Radius>
+      </For>
+
+      <For ref="buttonText">
+        <TextContent>$label</TextContent>
+        <Font>$font</Font>
+        <Fill>$textColor</Fill>
+        <BoxFit>
+          <Arg>new Bound(0, 0, $box.w, $box.h)</Arg>
+          <Arg>new Alignment(1, 1)</Arg>
+        </BoxFit>
+      </For>
+    </Behaviors>
+
+    <p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+               xmlns="http://www.w3.org/2000/svg">
+      <rect id="buttonRect" x="0" y="0" />
+      <text id="buttonText" />
+    </p:Content>
+  </Shape>
+
 </Shapes>
