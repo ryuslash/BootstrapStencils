@@ -15,30 +15,66 @@
       <PropertyGroup>
         <Property name="box" type="Dimension">200,50</Property>
       </PropertyGroup>
-      <PropertyGroup name="General">
+      <PropertyGroup>
         <Property name="rounded" displayName="Round corners"
                   type="Bool">true</Property>
         <Property name="inverted" displayName="Inverted colors"
                   type="Bool">false</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Colors">
+        <Property name="backgroundColor"
+                  displayName="Background Color"
+                  type="Color">#f8f8f8ff</Property>
+        <Property name="borderColor"
+                  displayName="Border Color"
+                  type="Color">#e7e7e7ff</Property>
+        <Property name="textColor"
+                  displayName="Text Color"
+                  type="Color">#777777ff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Inverted">
+        <Property name="backgroundColorInverted"
+                  displayName="Background Color"
+                  type="Color">#080808ff</Property>
+        <Property name="borderColorInverted"
+                  displayName="Border Color"
+                  type="Color">#222222ff</Property>
+        <Property name="textColorInverted"
+                  displayName="Text Color"
+                  type="Color">#9d9d9dff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Brand">
+        <Property name="brandLabel" displayName="Label"
+                  type="PlainText">Brand</Property>
+        <Property name="brandFont" displayName="Font"
+                  type="Font">Helvetica Neue,Helvetica,Arial,sans-serif|normal|normal|18px</Property>
       </PropertyGroup>
     </Properties>
 
     <Behaviors>
       <For ref="navRect">
         <Box>$box</Box>
-        <Fill>Color.fromString($inverted.value ? "#080808ff" : "#f8f8f8ff")</Fill>
-        <StrokeColor>Color.fromString($inverted.value ? "#222222ff" : "#e7e7e7ff")</StrokeColor>
+        <Fill>$inverted.value ? $backgroundColorInverted : $backgroundColor</Fill>
+        <StrokeColor>$inverted.value ? $borderColorInverted : $borderColor</StrokeColor>
         <StrokeStyle>1|</StrokeStyle>
         <Radius>
           <Arg>$rounded.value ? 4 : 0</Arg>
           <Arg>$rounded.value ? 4 : 0</Arg>
         </Radius>
       </For>
+
+      <For ref="brandText">
+        <TextContent>$brandLabel</TextContent>
+        <Font>$brandFont</Font>
+        <Fill>$inverted.value ? $textColorInverted : $textColor</Fill>
+      </For>
     </Behaviors>
 
     <p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil"
                xmlns="http://www.w3.org/2000/svg">
       <rect id="navRect" x="0" y="0" />
+      <text id="brandText" x="15" y="32" />
     </p:Content>
   </Shape>
+
 </Shapes>
