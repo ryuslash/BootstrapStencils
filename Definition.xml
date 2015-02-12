@@ -81,17 +81,85 @@
     <Properties>
       <PropertyGroup>
         <Property name="box" type="Dimension">67,44</Property>
+        <Property name="style" displayName="Style" type="Enum"
+                  p:enumValues="['default|Default', 'primary|Primary', 'success|Success', 'info|Info', 'warning|Warning', 'danger|Danger', 'link|Link']">default</Property>
       </PropertyGroup>
-      <PropertyGroup name="Color">
-        <Property name="backgroundColor"
+      <PropertyGroup name="Default">
+        <Property name="backgroundColorDefault"
                   displayName="Background Color"
                   type="Color">#ffffffff</Property>
-        <Property name="borderColor"
+        <Property name="borderColorDefault"
                   displayName="Border Color"
                   type="Color">#ccccccff</Property>
-        <Property name="textColor"
+        <Property name="textColorDefault"
                   displayName="Text Color"
                   type="Color">#333333ff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Primary">
+        <Property name="backgroundColorPrimary"
+                  displayName="Background Color"
+                  type="Color">#337ab7ff</Property>
+        <Property name="borderColorPrimary"
+                  displayName="Border Color"
+                  type="Color">#2e6da4ff</Property>
+        <Property name="textColorPrimary"
+                  displayName="Text Color"
+                  type="Color">#ffffffff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Success">
+        <Property name="backgroundColorSuccess"
+                  displayName="Background Color"
+                  type="Color">#5cb85cff</Property>
+        <Property name="borderColorSuccess"
+                  displayName="Border Color"
+                  type="Color">#4cae4cff</Property>
+        <Property name="textColorSuccess"
+                  displayName="Text Color"
+                  type="Color">#ffffffff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Info">
+        <Property name="backgroundColorInfo"
+                  displayName="Background Color"
+                  type="Color">#5bc0deff</Property>
+        <Property name="borderColorInfo"
+                  displayName="Border Color"
+                  type="Color">#46b8daff</Property>
+        <Property name="textColorInfo"
+                  displayName="Text Color"
+                  type="Color">#ffffffff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Warning">
+        <Property name="backgroundColorWarning"
+                  displayName="Background Color"
+                  type="Color">#f0ad4eff</Property>
+        <Property name="borderColorWarning"
+                  displayName="Border Color"
+                  type="Color">#eea236ff</Property>
+        <Property name="textColorWarning"
+                  displayName="Text Color"
+                  type="Color">#ffffffff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Danger">
+        <Property name="backgroundColorDanger"
+                  displayName="Background Color"
+                  type="Color">#d9534f</Property>
+        <Property name="borderColorDanger"
+                  displayName="Border Color"
+                  type="Color">#d43f3aff</Property>
+        <Property name="textColorDanger"
+                  displayName="Text Color"
+                  type="Color">#ffffffff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Link">
+        <Property name="backgroundColorLink"
+                  displayName="Background Color"
+                  type="Color">#00000000</Property>
+        <Property name="borderColorLink"
+                  displayName="Border Color"
+                  type="Color">#00000000</Property>
+        <Property name="textColorLink"
+                  displayName="Text Color"
+                  type="Color">#337ab7ff</Property>
       </PropertyGroup>
       <PropertyGroup name="Text">
         <Property name="label" displayName="Label"
@@ -104,8 +172,8 @@
     <Behaviors>
       <For ref="buttonRect">
         <Box>$box</Box>
-        <Fill>$backgroundColor</Fill>
-        <StrokeColor>$borderColor</StrokeColor>
+        <Fill>($style.value == "default") ? $backgroundColorDefault : (($style.value == "primary") ? $backgroundColorPrimary : (($style.value == "success") ? $backgroundColorSuccess : (($style.value == "info") ? $backgroundColorInfo : (($style.value == "warning") ? $backgroundColorWarning : (($style.value == "danger") ? $backgroundColorDanger : (($style.value == "link") ? $backgroundColorLink : $backgroundColorDefault))))))</Fill>
+        <StrokeColor>($style.value == "default") ? $borderColorDefault : (($style.value == "primary") ? $borderColorPrimary : (($style.value == "success") ? $borderColorSuccess : (($style.value == "info") ? $borderColorInfo : (($style.value == "warning") ? $borderColorWarning : (($style.value == "danger") ? $borderColorDanger : (($style.value == "link") ? $borderColorLink : $borderColorDefault))))))</StrokeColor>
         <StrokeStyle>1|</StrokeStyle>
         <Radius>
           <Arg>4</Arg>
@@ -116,7 +184,7 @@
       <For ref="buttonText">
         <TextContent>$label</TextContent>
         <Font>$font</Font>
-        <Fill>$textColor</Fill>
+        <Fill>($style.value == "default") ? $textColorDefault : (($style.value == "primary") ? $textColorPrimary : (($style.value == "success") ? $textColorSuccess : (($style.value == "info") ? $textColorInfo : (($style.value == "warning") ? $textColorWarning : (($style.value == "danger") ? $textColorDanger : (($style.value == "link") ? $textColorLink : $textColorDefault))))))</Fill>
         <BoxFit>
           <Arg>new Bound(0, 0, $box.w, $box.h)</Arg>
           <Arg>new Alignment(1, 1)</Arg>
