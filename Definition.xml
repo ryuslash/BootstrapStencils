@@ -10,6 +10,14 @@
                      elements"
         author="Tom Willemse"
         url="https://ryuslash.org">
+  <Properties>
+    <PropertyGroup name="Text">
+      <Property name="defaultTextFont"
+                type="Font"
+                displayName="Default Font">Helvetica Neue,Helvetica,Arial,sans-serif|normal|normal|14px</Property>
+    </PropertyGroup>
+  </Properties>
+
   <Shape id="navbar" displayName="Navbar" icon="Icons/navbar.png">
     <Properties>
       <PropertyGroup>
@@ -165,7 +173,7 @@
         <Property name="label" displayName="Label"
                   type="PlainText">Button</Property>
         <Property name="font" displayName="Font"
-                  type="Font">Helvetica Neue,Helvetica,Arial,sans-serif|normal|normal|14px</Property>
+                  type="Font"><E>$$defaultTextFont</E></Property>
       </PropertyGroup>
     </Properties>
 
@@ -196,6 +204,64 @@
                xmlns="http://www.w3.org/2000/svg">
       <rect id="buttonRect" x="0" y="0" />
       <text id="buttonText" />
+    </p:Content>
+  </Shape>
+
+  <Shape id="textInput" displayName="Text Input"
+         icon="Icons/text_input.png">
+    <Properties>
+      <PropertyGroup>
+        <Property name="box" type="Dimension">100,34</Property>
+        <Property name="borderRadius" type="Handle" p:lockY="true"
+                  p:minX="0" p:noScale="true">4,0</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Input">
+        <Property name="backgroundColor"
+                  displayName="Background Color"
+                  type="Color">#ffffffff</Property>
+        <Property name="borderColor"
+                  displayName="Border Color"
+                  type="Color">#ccccccff</Property>
+      </PropertyGroup>
+      <PropertyGroup name="Text">
+        <Property name="textColor"
+                  displayName="Color"
+                  type="Color">#555555ff</Property>
+        <Property name="label"
+                  displayName="Label"
+                  type="PlainText"></Property>
+        <Property name="font"
+                  displayName="Font"
+                  type="Font"><E>$$defaultTextFont</E></Property>
+      </PropertyGroup>
+    </Properties>
+
+    <Behaviors>
+      <For ref="inputRect">
+        <Box>$box</Box>
+        <Fill>$backgroundColor</Fill>
+        <StrokeColor>$borderColor</StrokeColor>
+        <Radius>
+          <Arg>$borderRadius.x</Arg>
+          <Arg>$borderRadius.x</Arg>
+        </Radius>
+      </For>
+
+      <For ref="inputText">
+        <TextContent>$label</TextContent>
+        <Font>$font</Font>
+        <Fill>$textColor</Fill>
+        <BoxFit>
+          <Arg>new Bound(12, 0, $box.w, $box.h)</Arg>
+          <Arg>new Alignment(0, 1)</Arg>
+        </BoxFit>
+      </For>
+    </Behaviors>
+
+    <p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+               xmlns="http://www.w3.org/2000/svg">
+      <rect id="inputRect" x="0" y="0" />
+      <text id="inputText" x="12" y="0" />
     </p:Content>
   </Shape>
 
