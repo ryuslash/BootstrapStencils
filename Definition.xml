@@ -88,7 +88,7 @@
   <Shape id="button" displayName="Button" icon="Icons/button.png">
     <Properties>
       <PropertyGroup>
-        <Property name="box" type="Dimension">67,44</Property>
+        <Property name="box" type="Dimension">67,34</Property>
         <Property name="style" displayName="Style" type="Enum"
                   p:enumValues="['default|Default', 'primary|Primary', 'success|Success', 'info|Info', 'warning|Warning', 'danger|Danger', 'link|Link']">default</Property>
       </PropertyGroup>
