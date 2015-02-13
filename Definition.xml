@@ -199,4 +199,9 @@
     </p:Content>
   </Shape>
 
+  <Shortcut displayName="Label"
+            icon="Icons/label.png"
+            to="Evolus.GTK.Widgets:Label">
+    <PropertyValue name="textFont">Helvetica Neue,Helvetica,Arial,sans-serif|bold|normal|14px</PropertyValue>
+  </Shortcut>
 </Shapes>
