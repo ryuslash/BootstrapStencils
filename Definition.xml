@@ -270,4 +270,40 @@
             to="Evolus.GTK.Widgets:Label">
     <PropertyValue name="textFont">Helvetica Neue,Helvetica,Arial,sans-serif|bold|normal|14px</PropertyValue>
   </Shortcut>
+  <Shortcut displayName="Heading 1"
+            icon="Icons/h1.png"
+            to="Evolus.BasicWebElements:heading">
+    <PropertyValue name="textContent">Heading level 1</PropertyValue>
+    <PropertyValue name="textFont">Helvetica Neue,Helvetica,Arial,sans-serif|bold|normal|36px</PropertyValue>
+  </Shortcut>
+  <Shortcut displayName="Heading 2"
+            icon="Icons/h2.png"
+            to="Evolus.BasicWebElements:heading">
+    <PropertyValue name="textContent">Heading level 2</PropertyValue>
+    <PropertyValue name="textFont">Helvetica Neue,Helvetica,Arial,sans-serif|bold|normal|30px</PropertyValue>
+  </Shortcut>
+  <Shortcut displayName="Heading 3"
+            icon="Icons/h3.png"
+            to="Evolus.BasicWebElements:heading">
+    <PropertyValue name="textContent">Heading level 3</PropertyValue>
+    <PropertyValue name="textFont">Helvetica Neue,Helvetica,Arial,sans-serif|bold|normal|24px</PropertyValue>
+  </Shortcut>
+  <Shortcut displayName="Heading 4"
+            icon="Icons/h4.png"
+            to="Evolus.BasicWebElements:heading">
+    <PropertyValue name="textContent">Heading level 4</PropertyValue>
+    <PropertyValue name="textFont">Helvetica Neue,Helvetica,Arial,sans-serif|bold|normal|18px</PropertyValue>
+  </Shortcut>
+  <Shortcut displayName="Heading 5"
+            icon="Icons/h5.png"
+            to="Evolus.BasicWebElements:heading">
+    <PropertyValue name="textContent">Heading level 5</PropertyValue>
+    <PropertyValue name="textFont">Helvetica Neue,Helvetica,Arial,sans-serif|bold|normal|14px</PropertyValue>
+  </Shortcut>
+  <Shortcut displayName="Heading 6"
+            icon="Icons/h6.png"
+            to="Evolus.BasicWebElements:heading">
+    <PropertyValue name="textContent">Heading level 6</PropertyValue>
+    <PropertyValue name="textFont">Helvetica Neue,Helvetica,Arial,sans-serif|bold|normal|12px</PropertyValue>
+  </Shortcut>
 </Shapes>
