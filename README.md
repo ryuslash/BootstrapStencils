@@ -42,3 +42,7 @@ far, along with descriptions of their options and settings.
     - Headings 1 through 6 are available. These are just the heading
       element from the "Basic Web Elements" stencil with different
       defaults.
+
+- Hyperlink
+    - This is just the Hyperlink element from the "Basic Web Elements"
+      stencil with different defaults.

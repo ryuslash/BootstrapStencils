@@ -306,4 +306,11 @@
     <PropertyValue name="textContent">Heading level 6</PropertyValue>
     <PropertyValue name="textFont">Helvetica Neue,Helvetica,Arial,sans-serif|bold|normal|12px</PropertyValue>
   </Shortcut>
+  <Shortcut displayName="Hyperlink"
+            icon="Icons/hyperlink.png"
+            to="Evolus.BasicWebElements:htmlLink">
+    <PropertyValue name="textFont"><E>$$defaultTextFont</E></PropertyValue>
+    <PropertyValue name="textColor">#337ab7ff</PropertyValue>
+    <PropertyValue name="customStyle">text-decoration: none</PropertyValue>
+  </Shortcut>
 </Shapes>
