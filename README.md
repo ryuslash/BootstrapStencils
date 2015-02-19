@@ -1,7 +1,9 @@
 # Bootstrap stencils
 
-A [Bootstrap](http://getbootstrap.com) stencil for
-[Pencil](http://pencil.evolus.vn).
+A [Bootstrap][] stencil for [Pencil][].
+
+[Bootstrap]: http://getbootstrap.com
+[Pencil]: http://pencil.evolus.vn
 
 ## Included elements
 
